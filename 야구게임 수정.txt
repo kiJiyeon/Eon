@@ -1,0 +1,35 @@
+while (1) {
+			printf("수를 입력하세요(3자리수, 동일 숫자 중복 안됨) : ");
+			for (int i = 0;i < 3;i++) {
+				scanf("%d", &save_num[i]);
+			}
+			if (StrikeBall(secret, save_num) == 1)
+			{
+				break;
+			}
+		count++;
+	}
+		printf("%d번만에 성공 \n 한번더?", count);
+		scanf(" %c", &yn);
+		if (yn == 'n') return;
+	}//Game 
+
+
+
+
+printf("%d strike %d ball ", strike, ball);
+	
+
+	if (strike == 0 && ball == 0)
+	{
+		printf("out!");
+	}
+	if (strike == 3)
+	{
+		return 1;
+	}
+	else
+		return 0;
+
+	}
+

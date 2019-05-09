@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+int main() {
+	int sum=0;
+
+	for (int i = 1;i < 1000;i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+			sum = sum + i;
+	}
+
+	printf("1000보다 작은 자연수 중 3또는 5의 배수를 모두 더한 값은 %d입니다.", sum);
+}

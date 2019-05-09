@@ -1,0 +1,97 @@
+야구게임
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int StrikeBall(int *secret,int *save_num);
+void setRand(int *secret);
+
+
+void main() {
+
+int secret[3]; // 정답
+int save_num[3]; // 사용자 입력 기록 저장
+int count; // 시도 횟수
+	char yn;
+	srand((unsigned int)time(NULL));
+
+	while (1) {
+		count = 0;
+		setRand(secret); // 난수 생성 함수
+
+		while (1) {
+			printf("수를 입력하세요(3자리수, 동일 숫자 중복 안됨) : ");
+			for (int i = 0;i < 3;i++) {
+				scanf("%d", &save_num[i]);
+			}
+			if (StrikeBall(secret, save_num) == 1)
+			{
+				break;
+			}
+		count++;}
+		printf("%d번만에 성공 \n 한번더?", count);
+		scanf(" %c", &yn);
+		if (yn == 'n') return;
+	}
+
+}
+
+void setRand(int *secret)
+{
+
+	secret[0] = rand() % 10;
+	while (1)
+	{
+		secret[1] = rand() % 10;
+		if (secret[0] != secret[1])
+			break;
+
+	}
+	while (1)
+	{
+		secret[2] = rand() % 10;
+		if (secret[0] != secret[2] && secret[1] != secret[2])
+			break;
+	}
+}
+
+int StrikeBall(int *secret, int *save_num)
+{
+	int strike = 0;
+	int ball = 0;
+		
+	for (int a = 0; a < 3;a++)
+	{
+		for (int b = 0;b < 3;b++)
+		{
+			if (secret[a] == save_num[b])
+			{
+				if (a == b)
+					strike++;
+				else
+					ball++;
+			}
+
+		}
+		
+
+	}printf("%d strike %d ball ", strike, ball);
+	
+
+	if (strike == 0 && ball == 0)
+	{
+		printf("out!");
+	}
+	if (strike == 3)
+	{
+		return 1;
+	}
+	else
+		return 0;
+
+	}

@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+int multi(int a, int b, int c);
+
+int main() {
+
+	int i, j, k;
+	
+
+}
+
+int multi(int a, int b, int c)
+{
+	int i, j, k;
+	int result;
+
+	for (a = 1;a <= 9;a++)
+	{
+		for (b = 0;b <= 9;b++)
+		{
+			for (c = 0;c <= 9;c++)
+			{
+				result = abc*abc;
+			}
+		}
+	}
+}

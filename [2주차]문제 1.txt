@@ -1,0 +1,40 @@
+[다이아몬드]
+
+#define _CRT_SRCURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+	int icount1, ivalue;
+
+	printf("홀수를 입력하세요 : ");
+	scanf("%d", &ivalue);
+
+	for (icount1 = 1;icount1 <= (ivalue / 2) + 1;icount1++) //1~4반복
+	{
+		for (int i = ivalue / 2 - icount1 + 1;i>0;i--) {
+			printf(" ");
+		}
+		for (int j = 1;j <= 2 * icount1 - 1;j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	//5~7반복
+	for (icount1 = 1;icount1 <= ivalue / 2;icount1++)
+	{
+		for (int a = 1;a <= icount1;a++)
+		{
+			printf(" ");
+		}
+
+		for (int b = ivalue - 2 * icount1;b > 0;b--)
+		{
+			printf("*");
+		}
+
+		printf("\n");
+	}
+
+}

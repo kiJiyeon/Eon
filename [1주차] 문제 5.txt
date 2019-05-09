@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int gcd(int a, int b) {
+	return b ? gcd(b, a%b) : a;
+}
+
+int lcm(int a, int b) {
+	return gcd(a, b) * a / gcd(a, b) * b / gcd(a, b);
+}
+
+
+int main() {
+	int i;
+	int num = 0;
+	num = lcm(20, 19);
+	for (i = 18;i >= 11;i--) {
+		num = lcm(num, i);
+	}
+	printf("%d", num);
+	return 0;
+}

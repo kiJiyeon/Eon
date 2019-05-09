@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int i = 2;// 계속 커져야하는 변수
+	int j;// 2~19
+
+	for (j = 2;j < 20;j++)//j=2부터 19까지 반복 
+		{if (i%j == 0)
+	{
+		
+
+			j++;
+		}
+	else i++;//i%j가 0이 아니면 i++
+	}
+	
+
+	printf("%d", i);
+}

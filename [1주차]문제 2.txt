@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+
+	int a, b, c;
+	int sum;
+
+	a = 1;b = 2; //a=1항, b =2항
+	c = a + b;//c = n번째 항 까지 쭉 갈 변수
+	sum = b; // 첫 짝수 항이 2인 b값 , sum에는 짝수인 항들의 합이 저장 
+
+	while (c <= 4000000) { 
+		a = b; // a에 b값을 대입 ---> n-2항
+		b = c; // b에 c값을 대입 ---> n-1항
+		c = a + b; //n번째 항
+		if (c % 2 == 0) { sum = sum + c; } //짝수면 sum에 c를 더함 ---> 짝수인 항의 합
+	
+	}
+	printf("%d", sum);
